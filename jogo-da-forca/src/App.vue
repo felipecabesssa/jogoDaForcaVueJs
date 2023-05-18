@@ -4,7 +4,17 @@
     <h1>Jogo da Forca</h1>
 
     <section v-if="tela === 'inicio'" id="inicio">
-      Início
+      
+      <Formulario v-if="etapa === 'palavra'"
+        title="Defina a palavra"
+        button="Próximo"
+      />
+
+      <Formulario v-if="etapa === 'dica'" 
+        title="Defina a dica"
+        button="Iniciar jogo ;)"
+      />
+
     </section>
 
     <section v-if="tela === 'jogo'"  id="jogo">
@@ -15,16 +25,19 @@
 </template>
 
 <script>
+import Formulario from './components/Formulario.vue';
 import './css/global.css';
 
 export default {
   name: 'App',
   data() {
     return {
-      tela: 'inicio'
+      tela: 'inicio',
+      etapa: 'palavra'
     }
   },
   components: {
+    Formulario
   }
 }
 </script>
