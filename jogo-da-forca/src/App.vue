@@ -8,6 +8,7 @@
       <Formulario v-if="etapa === 'palavra'"
         title="Defina a palavra"
         button="Próximo"
+        :action="setPalavra"
       />
 
       <Formulario v-if="etapa === 'dica'" 
@@ -38,6 +39,11 @@ export default {
   },
   components: {
     Formulario
+  },
+  methods: {
+    setPalavra: function(palavra) {
+      alert(palavra)
+    }
   }
 }
 </script>

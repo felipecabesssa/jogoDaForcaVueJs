@@ -7,7 +7,10 @@
 
     <input type="text" class="formulario-input" v-model="inputValue">
 
-    <button :disable="inputValue.length === 0">{{ button }}</button>
+    <button 
+      :disable="inputValue.length === 0"
+      v-on:click="onSubmit"
+      >{{ button }}</button>
 
   </div>
 </template>
@@ -17,11 +20,18 @@ export default {
   name: 'Formulario',
   props: {
     title: String,
-    button: String
+    button: String,
+    action: Function
   },
   data() {
     return {
       inputValue:''
+    }
+  },
+  methods: {
+    onSubmit: function() {
+      this.action(this.inputValue);
+      this.inputValue = '';
     }
   }
 }
