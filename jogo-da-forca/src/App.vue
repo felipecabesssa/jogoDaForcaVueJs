@@ -81,7 +81,34 @@ export default {
     jogar: function(letra) {
       //ADICIONA LETRA JOGADA
       this.letras.push(letra);
+
+      //VALIDAR ERRO
+      this.verificarErros(letra);
+    },
+
+    verificarErros: function(letra) {
+      //ACERTO
+      if (this.palavra.toLowerCase().indexOf(letra.toLowerCase()) >= 0) {
+          return this.verificarAcertos();
+      }
+      
+      //ERROS
+      this.erros++;
+
+      //ENFORCADO
+      if(this.erros === 6) {
+        this.etapa = 'enforcado'
+      }
+
+    },
+
+    verificarAcertos: function() {
+      let letrasUnicas = [...new Set(this.palavra.split(''))];
+      if(letrasUnicas.length === (this.letras.length - this.erros)) {
+        this.etapa = 'ganhador';
+      }
     }
+
   }
 }
 </script>
