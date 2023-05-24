@@ -23,7 +23,9 @@
 
     <section v-if="tela === 'jogo'"  id="jogo">
       
-      <Jogo :erros="erros" />
+      <Jogo :erros="erros" 
+            :palavra="palavra"
+            :dica="dica" />
 
     </section>
 
