@@ -6,7 +6,8 @@
     <Palavra 
       :palavra="palavra"
       :dica="dica"
-      :verificarLetra="verificarLetra" />
+      :verificarLetra="verificarLetra"
+      :etapa="etapa" />
 
   </div>
 </template>
@@ -21,7 +22,8 @@ export default {
     erros: Number,
     palavra: String,
     dica: String,
-    verificarLetra: Function
+    verificarLetra: Function,
+    etapa: String
   },
   data() {
     return {

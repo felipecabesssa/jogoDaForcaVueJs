@@ -26,7 +26,8 @@
       <Jogo :erros="erros" 
             :palavra="palavra"
             :dica="dica"
-            :verificarLetra="verificarLetra" />
+            :verificarLetra="verificarLetra"
+            :etapa="etapa" />
 
     </section>
 
