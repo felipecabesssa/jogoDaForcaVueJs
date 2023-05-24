@@ -5,7 +5,8 @@
 
     <Palavra 
       :palavra="palavra"
-      :dica="dica" />
+      :dica="dica"
+      :verificarLetra="verificarLetra" />
 
   </div>
 </template>
@@ -19,7 +20,8 @@ export default {
   props: {
     erros: Number,
     palavra: String,
-    dica: String
+    dica: String,
+    verificarLetra: Function
   },
   data() {
     return {

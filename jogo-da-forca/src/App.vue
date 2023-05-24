@@ -25,7 +25,8 @@
       
       <Jogo :erros="erros" 
             :palavra="palavra"
-            :dica="dica" />
+            :dica="dica"
+            :verificarLetra="verificarLetra" />
 
     </section>
 
@@ -58,10 +59,15 @@ export default {
       this.palavra = palavra;
       this.etapa = 'dica';
     },
+
     setDica: function(dica) {
       this.dica = dica;
       this.tela = 'jogo';
       this.etapa = 'jogo';
+    },
+
+    verificarLetra: function(letra) {
+      return letra == 'e';
     }
   }
 }

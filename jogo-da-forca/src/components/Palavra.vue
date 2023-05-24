@@ -5,11 +5,10 @@
 
       <div class="palavra-letra" v-for="(letra,key) in palavra" :key="key">
 
-        {{ letra }}
+        {{ verificarLetra(letra) ? letra : '' }}
 
       </div>
 
-      {{ palavra }} {{ dica }}
     </div>
 
     <div class="palavra-dica">
@@ -24,7 +23,8 @@ export default {
   name: 'palavra',
   props: {
     palavra: String,
-    dica: String
+    dica: String,
+    verificarLetra: Function
   },
   data() {
     return {
@@ -46,6 +46,21 @@ export default {
       display: flex;
       flex-direction: column;
       text-align: center;
+      align-items: center;
+    }
+
+    .palavra-letras {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .palavra-letra {
+      height: 30px;
+      width: 30px;
+      margin: 0px 5px;
+      border-bottom: 1px solid var(--color-text-light);
+      display: flex;
+      justify-content: center;
       align-items: center;
     }
 
