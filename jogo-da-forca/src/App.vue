@@ -47,7 +47,7 @@ export default {
       palavra: '',
       dica: '',
       erros: 0,
-      letras: ['e']
+      letras: ['E']
     }
   },
   components: {
@@ -68,7 +68,7 @@ export default {
     },
 
     verificarLetra: function(letra) {
-      return this.letras.find(item => item === letra);
+      return this.letras.find(item => item.toLowerCase() === letra.toLowerCase());
     }
   }
 }
