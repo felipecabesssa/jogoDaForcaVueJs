@@ -23,7 +23,7 @@
 
     <section v-if="tela === 'jogo'"  id="jogo">
       
-      <Jogo />
+      <Jogo :erros="erros" />
 
     </section>
 
@@ -42,7 +42,8 @@ export default {
       tela: 'inicio',
       etapa: 'palavra',
       palavra: '',
-      dica: ''
+      dica: '',
+      erros: 0
     }
   },
   components: {

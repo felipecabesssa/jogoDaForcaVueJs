@@ -1,7 +1,7 @@
 <template>
   <div class="jogo">
 
-    <Forca />
+    <Forca :erros="erros" />
 
   </div>
 </template>
@@ -12,7 +12,7 @@ export default {
   components: { Forca },
   name: 'Jogo',
   props: {
-    
+    erros: Number
   },
   data() {
     return {
@@ -29,6 +29,12 @@ export default {
 
 <style>
 
-  
+  .jogo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
 </style>
