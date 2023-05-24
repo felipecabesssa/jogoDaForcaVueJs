@@ -23,11 +23,16 @@
 
     <section v-if="tela === 'jogo'"  id="jogo">
       
-      <Jogo :erros="erros" 
-            :palavra="palavra"
-            :dica="dica"
-            :verificarLetra="verificarLetra"
-            :etapa="etapa" />
+      <Jogo 
+      
+        :erros="erros" 
+        :palavra="palavra"
+        :dica="dica"
+        :verificarLetra="verificarLetra"
+        :etapa="etapa"
+        :letras="letras"
+
+      />
 
     </section>
 
@@ -48,7 +53,7 @@ export default {
       palavra: '',
       dica: '',
       erros: 0,
-      letras: ['E']
+      letras: []
     }
   },
   components: {
