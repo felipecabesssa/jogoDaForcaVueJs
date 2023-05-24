@@ -10,7 +10,11 @@
       :etapa="etapa" 
     />
 
-    <Teclado :letras="letras" :verificarLetra="verificarLetra"/>
+    <Teclado 
+      :letras="letras" 
+      :verificarLetra="verificarLetra"
+      :jogar="jogar"
+    />
 
 
   </div>
@@ -34,7 +38,8 @@ export default {
     dica: String,
     verificarLetra: Function,
     etapa: String,
-    letras: Array
+    letras: Array,
+    jogar: Function
   },
 
   data() {
