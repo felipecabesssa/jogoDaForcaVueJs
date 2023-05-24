@@ -46,7 +46,8 @@ export default {
       etapa: 'palavra',
       palavra: '',
       dica: '',
-      erros: 0
+      erros: 0,
+      letras: ['e']
     }
   },
   components: {
@@ -67,7 +68,7 @@ export default {
     },
 
     verificarLetra: function(letra) {
-      return letra == 'e';
+      return this.letras.find(item => item === letra);
     }
   }
 }
