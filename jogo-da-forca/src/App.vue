@@ -32,6 +32,7 @@
         :etapa="etapa"
         :letras="letras"
         :jogar="jogar"
+        :jogarNovamente="jogarNovamente"
 
       />
 
@@ -107,6 +108,16 @@ export default {
       if(letrasUnicas.length === (this.letras.length - this.erros)) {
         this.etapa = 'ganhador';
       }
+    },
+
+    jogarNovamente: function() {
+      this.palavra = '';
+      this.dica = '';
+      this.erros = '';
+      this.letras = [];
+      this.tela = 'inicio';
+      this.etapa = 'palavra';
+
     }
 
   }

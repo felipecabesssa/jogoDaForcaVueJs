@@ -11,9 +11,17 @@
     />
 
     <Teclado 
+      v-if="etapa === 'jogo'"
       :letras="letras" 
       :verificarLetra="verificarLetra"
       :jogar="jogar"
+    />
+
+    <Final 
+      v-if="etapa != 'jogo'" 
+      :etapa="etapa" 
+      :texto="etapa === 'ganhador' ? 'Parabéns :)' : 'Tadinho :('"
+      :jogarNovamente="jogarNovamente" 
     />
 
 
@@ -21,6 +29,7 @@
 </template>
 
 <script>
+import Final from './Final.vue'
 
 import Forca from './Forca.vue'
 import Palavra from './Palavra.vue'
@@ -28,7 +37,7 @@ import Teclado from './Teclado.vue'
 
 export default {
 
-  components: { Forca, Palavra, Teclado },
+  components: { Forca, Palavra, Teclado, Final },
 
   name: 'Jogo',
 
@@ -39,7 +48,8 @@ export default {
     verificarLetra: Function,
     etapa: String,
     letras: Array,
-    jogar: Function
+    jogar: Function,
+    jogarNovamente: Function
   },
 
   data() {
